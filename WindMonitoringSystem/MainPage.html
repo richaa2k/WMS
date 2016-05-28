@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WMS</title>
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="Scripts/WMS_JS/WMS.js"></script>
+<body ng-app="wms" ng-controller="wmsController">
+    <div style="text-align:center">
+        <h1>Wind Monitoring System </h1>
+    </div>
+
+    <table style="width:100%">
+        <tr>
+            <td style="width:45%" align="center">
+                State
+            </td>
+            <td style="width:10%"></td>
+            <td style="width:45%" align="center">
+                City
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <select id="states" ng-model="selectedState" size=3 style="height:200px;width:200px"  ng-options="">
+                    <option ng-repeat="s in states" value={{s.code}}>{{s.name}}</option>
+                </select>
+            </td>
+            <td></td>
+            <td align="center">
+                <select ng-model="selectedCity" ng-options="city as city.name for city in cities"></select>
+                {{selectedCity}}
+
+
+            </td>
+        </tr>
+        <tr>
+            <td>Station Code</td>
+            <td></td>
+            <td>Date</td>
+        </tr>
+        <tr>
+            <td><span ng-bind-html="selectedCity.ccode"></span></td>
+            <td>{{selectedState}}</td>
+            <td><input type='text' id="date" datepicker /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
